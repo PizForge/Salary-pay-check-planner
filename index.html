@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f2">
+    <title>Malaysia Salary Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Gaji home">
+          <span class="brand-mark" aria-hidden="true">g</span>
+          <span>gaji<span class="brand-period">.</span></span>
+        </a>
+        <span class="header-label">MALAYSIA · PAYCHECK PLANNER</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR MONTHLY BREAKDOWN</p>
+        <h1 id="page-title">Know what<br>you <span>take home.</span></h1>
+        <p class="intro-copy">A clearer picture of your monthly pay, after statutory contributions.</p>
+      </section>
+
+      <section class="calculator" aria-label="Monthly salary calculator">
+        <div class="calculator-main">
+          <label class="field-label" for="salary">MONTHLY GROSS SALARY</label>
+          <div class="salary-input">
+            <span class="currency" aria-hidden="true">RM</span>
+            <input id="salary" name="salary" type="number" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 5,000" autocomplete="off" aria-describedby="salary-help salary-error">
+          </div>
+          <p class="field-hint" id="salary-help">Before deductions · Enter your monthly salary</p>
+          <p class="field-error" id="salary-error" role="alert" hidden></p>
+
+          <div class="divider"></div>
+          <div class="option-row">
+            <div>
+              <p class="option-title">Lindung 24 Jam</p>
+              <p class="option-caption">Optional personal accident coverage</p>
+            </div>
+            <label class="switch">
+              <input id="lindung-toggle" type="checkbox" aria-label="Include Lindung 24 Jam contribution">
+              <span class="switch-track" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="result-panel" aria-live="polite">
+          <p class="result-label">ESTIMATED TAKE-HOME PAY</p>
+          <p class="net-salary" id="net-salary">RM 0.00</p>
+          <p class="result-period">per month</p>
+          <div class="result-divider"></div>
+          <p class="breakdown-heading">YOUR CONTRIBUTIONS</p>
+          <dl class="breakdown">
+            <div class="breakdown-row">
+              <dt>EPF <span class="rate" id="epf-rate"></span></dt>
+              <dd id="epf-amount">RM 0.00</dd>
+            </div>
+            <div class="breakdown-row">
+              <dt>SOCSO <span class="rate" id="socso-rate"></span></dt>
+              <dd id="socso-amount">RM 0.00</dd>
+            </div>
+            <div class="breakdown-row">
+              <dt>EIS <span class="rate" id="eis-rate"></span></dt>
+              <dd id="eis-amount">RM 0.00</dd>
+            </div>
+            <div class="breakdown-row lindung-row" id="lindung-row" hidden>
+              <dt>Lindung 24 Jam <span class="rate" id="lindung-rate"></span></dt>
+              <dd id="lindung-amount">RM 0.00</dd>
+            </div>
+            <div class="breakdown-row total-row">
+              <dt>Total deductions</dt>
+              <dd id="total-amount">RM 0.00</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <aside class="estimate-note">
+        <span class="info-icon" aria-hidden="true">i</span>
+        <p>These results are estimates for planning purposes. Actual contributions may differ based on current contribution schedules and individual circumstances. Check with <a href="https://www.kwsp.gov.my/" target="_blank" rel="noopener noreferrer">KWSP</a> and <a href="https://www.perkeso.gov.my/" target="_blank" rel="noopener noreferrer">PERKESO</a> for the latest details.</p>
+      </aside>
+
+      <footer class="footer">
+        <span>Made for a little more clarity.</span>
+        <span>Rates and limits may change.</span>
+      </footer>
+    </main>
+  </body>
+</html>
